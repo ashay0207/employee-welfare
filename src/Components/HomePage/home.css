@@ -1,0 +1,15 @@
+body{
+    background-image: url('../../assets/homepage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pagetitle{
+    padding: 40px;
+    text-align: center;
+}
+.pagetitle p {
+    /* width: 50%; */
+    padding: 80px 60px;
+    font-size: 2rem;
+    font-weight: 400;
+}

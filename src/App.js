@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar/navbar';
+import AdminPage from './Components/AdminPage/AdminPage';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
+import Employee from './Components/EmployeePage/employee';
+import Home from './Components/HomePage/home';
+import ProtectedRoutes from './Components/ProtectedRoutes/ProtectedRoutes';
+import 'bootstrap5/src/css/bootstrap.min.css';
+import 'bootstrap5/src/js/bootstrap.bundle.min.js';
 
 function App() {
+  const [user, setUser] = useState(null);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar user={user}  setUser={setUser}/> {/* Pass user and setUser as props */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login setUser={setUser} />} />
+          <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/employee" element={<Employee />} />
+          <Route path="/AdminPage" element={<AdminPage />} />
+
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

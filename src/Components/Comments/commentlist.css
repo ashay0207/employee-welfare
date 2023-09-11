@@ -1,0 +1,39 @@
+/* commentlist.css */
+
+/* Style for the entire comment list container */
+.comment-list {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Style for each individual comment */
+  .comment {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  /* Style for the username within a comment */
+  .comment strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style for the comment text */
+  .user-comment {
+    margin-left: 10px;
+    color: #555;
+  }
+  
+  /* Style for the comment heading */
+  h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
